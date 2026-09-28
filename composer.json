@@ -1,0 +1,24 @@
+{
+    "name": "stellantis/autocrm-tests",
+    "description": "UI and API tests for Stellantis AutoCRM",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ekaterina Davydova",
+            "email": "kitte1105@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "require": {},
+    "require-dev": {
+        "codeception/codeception": "^5.0",
+        "codeception/module-webdriver": "^3.0",
+        "codeception/module-rest": "^3.0"
+    }
+}
