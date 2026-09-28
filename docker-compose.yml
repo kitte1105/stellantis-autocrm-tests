@@ -1,0 +1,22 @@
+services:
+
+  tests:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: tests_php
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - selenium
+    environment:
+      SELENIUM_HOST: selenium
+      SELENIUM_PORT: 4444
+
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: tests_selenium
+    shm_size: 2gb
+    ports:
+      - "4444:4444"

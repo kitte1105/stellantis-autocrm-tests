@@ -15,10 +15,11 @@
     ],
     "minimum-stability": "stable",
     "license": "proprietary",
-    "require": {},
     "require-dev": {
         "codeception/codeception": "^5.0",
         "codeception/module-webdriver": "^3.0",
-        "codeception/module-rest": "^3.0"
+        "codeception/module-rest": "^3.0",
+        "codeception/module-phpbrowser": "*",
+        "codeception/module-asserts": "^3.2"
     }
 }
