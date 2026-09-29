@@ -16,7 +16,7 @@ services:
 
   selenium:
     image: selenium/standalone-chrome:latest
-    container_name: tests_selenium
+    container_name: selenium
     shm_size: 2gb
     ports:
       - "4444:4444"

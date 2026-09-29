@@ -1,0 +1,4 @@
+modules:
+  config:
+    WebDriver:
+      host: 127.0.0.1
