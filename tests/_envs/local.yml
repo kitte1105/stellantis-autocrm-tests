@@ -2,3 +2,8 @@ modules:
   config:
     WebDriver:
       host: 127.0.0.1
+      capabilities:
+        goog:chromeOptions:
+          args:
+            - '--no-sandbox'
+            - '--disable-dev-shm-usage'
