@@ -14,7 +14,6 @@ use Tests\Page\LoginPage;
 final class LoginCest
 {
     public function _before(
-        AcceptanceTester $I,
         LoginPage $loginPage
     ): void {
         $loginPage->open();
@@ -24,7 +23,6 @@ final class LoginCest
     }
 
     public function loginWithInvalidCredentialsTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
     ): void {
         $loginPage->fillEmail('incorrect_email@example.com');
@@ -38,7 +36,6 @@ final class LoginCest
     }
 
     public function emptyCredentialTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
     ): void {
         $loginPage->clickLogin();
@@ -52,7 +49,6 @@ final class LoginCest
     }
 
     public function passwordMaskingTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
     ): void {
         $loginPage->fillPassword('wrong_password');
@@ -61,9 +57,8 @@ final class LoginCest
         $loginPage->seePasswordIsMasked();
     }
 
-    #[DataProvider('invalidFieldsProvider')]
+    #[DataProvider('emailValidationProvider')]
     public function invalidEmailValueTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
         Example $userData,
         Scenario $scenario
@@ -102,7 +97,6 @@ final class LoginCest
     }
 
     public function forgotPasswordTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
     ): void {
         $restorePasswordPage = $loginPage->clickForgotPassword();
@@ -111,7 +105,7 @@ final class LoginCest
         $restorePasswordPage->seePageOpened();
     }
 
-    protected function invalidFieldsProvider(): array
+    protected function emailValidationProvider(): array
     {
         return [
             'login instead email'    => [

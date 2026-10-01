@@ -67,6 +67,9 @@ class LoginPage extends BasePage
         $this->seeChosenLanguage();
     }
 
+    /**
+     * Removes focus from the current field to trigger client-side validation.
+     */
     public function removeFieldFocus(): void
     {
         $this->tester->click($this->authorizationDiv);
