@@ -8,8 +8,9 @@ use Codeception\Attribute\DataProvider;
 use Codeception\Attribute\Skip;
 use Codeception\Scenario;
 use Codeception\Example;
-use Tests\Support\AcceptanceTester;
 use Tests\Page\LoginPage;
+use Tests\Support\AcceptanceTester;
+use Tests\Support\Factory\UserHelperFactory;
 
 final class LoginCest
 {
@@ -103,6 +104,30 @@ final class LoginCest
 
         $restorePasswordPage->waitUntilOpened();
         $restorePasswordPage->seePageOpened();
+    }
+
+
+    public function validLoginTest(
+        AcceptanceTester $I,
+        LoginPage $loginPage,
+        UserHelperFactory $userHelperFactory,
+    ): void {
+        $userHelper = $userHelperFactory->create();
+        $user = $userHelper->createTestUser();
+
+        try {
+            $loginPage->login(
+                $user->email,
+                $user->password,
+            );
+
+            // TODO: Добавить проверки успешной авторизации:
+            // - проверить, что пользователь авторизован;
+            // - проверить переход на страницу после авторизации;
+            // - проверить наличие элемента, доступного только авторизованному пользователю.
+        } finally {
+            $userHelper->deleteTestUser($user);
+        }
     }
 
     protected function emailValidationProvider(): array
