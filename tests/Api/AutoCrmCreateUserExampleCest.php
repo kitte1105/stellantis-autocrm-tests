@@ -16,7 +16,7 @@ final class AutoCrmCreateUserExampleCest
      * HTTP-код должны быть заменены согласно документации AutoCRM.
      */
     #[Skip('API-контракт AutoCRM не предоставлен в задании')]
-    function createUser(ApiTester $I): void
+    public function createUser(ApiTester $I): void
     {
         $I->haveHttpHeader('Content-Type', 'application/json');
         $I->haveHttpHeader(

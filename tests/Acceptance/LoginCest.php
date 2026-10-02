@@ -17,7 +17,7 @@ final class LoginCest
         LoginPage $loginPage
     ): void {
         $loginPage->open();
-        $loginPage->setLanguage('en');
+        $loginPage->setLanguage('ru');
         $loginPage->waitForLanguageChanged();
         $loginPage->seePageOpened();
     }
