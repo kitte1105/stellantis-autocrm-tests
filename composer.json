@@ -17,10 +17,11 @@
     "license": "proprietary",
     "require-dev": {
         "codeception/codeception": "^5.3.6",
-        "codeception/module-webdriver": "^4.0.5",
+        "codeception/module-webdriver": "^3.2",
         "codeception/module-rest": "^3.0",
         "codeception/module-asserts": "^3.2",
-        "phpunit/phpunit": "^13.3",
-        "codeception/module-phpbrowser": "^4.1"
+        "phpunit/phpunit": "^9.5",
+        "codeception/module-phpbrowser": "^4.1",
+        "codeception/visualception": "^5.0"
     }
 }

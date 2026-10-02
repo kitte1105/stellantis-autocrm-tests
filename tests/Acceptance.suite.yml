@@ -13,3 +13,8 @@ modules:
                       args:
                           - '--no-sandbox'
                           - '--disable-dev-shm-usage'
+                          - '--force-device-scale-factor=1'
+        - VisualCeption:
+            maximumDeviation: 5
+            saveCurrentImageIfFailure: true
+            fullScreenShot: false

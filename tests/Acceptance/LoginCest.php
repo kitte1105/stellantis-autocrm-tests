@@ -49,12 +49,17 @@ final class LoginCest
     }
 
     public function passwordMaskingTest(
+        AcceptanceTester $I,
         LoginPage $loginPage,
     ): void {
         $loginPage->fillPassword('wrong_password');
         $loginPage->removeFieldFocus();
         $loginPage->waitForPasswordValid();
         $loginPage->seePasswordIsMasked();
+        $I->dontSeeVisualChanges(
+            'login-password-field',
+            'input#loginform-password',
+        );
     }
 
     #[DataProvider('emailValidationProvider')]
@@ -107,7 +112,6 @@ final class LoginCest
 
 
     public function validLoginTest(
-        AcceptanceTester $I,
         LoginPage $loginPage,
         UserHelperFactory $userHelperFactory,
     ): void {
