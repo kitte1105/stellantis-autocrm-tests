@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Acceptance;
 
 use Codeception\Attribute\DataProvider;
-use Codeception\Attribute\Skip;
 use Codeception\Scenario;
 use Codeception\Example;
 use Tests\Page\LoginPage;

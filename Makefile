@@ -7,5 +7,11 @@ down:
 test:
 	docker compose exec tests vendor/bin/codecept run Acceptance --env docker
 
-test_local:
+test-local:
 	./vendor/bin/codecept run Acceptance --steps --env local
+
+test-api:
+	docker compose exec tests vendor/bin/codecept run Api --env docker
+
+test-api-local:
+	./vendor/bin/codecept run Api --steps --env local

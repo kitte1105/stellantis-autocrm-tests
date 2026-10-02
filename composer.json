@@ -20,6 +20,7 @@
         "codeception/module-webdriver": "^4.0.5",
         "codeception/module-rest": "^3.0",
         "codeception/module-asserts": "^3.2",
-        "phpunit/phpunit": "^13.3"
+        "phpunit/phpunit": "^13.3",
+        "codeception/module-phpbrowser": "^4.1"
     }
 }
